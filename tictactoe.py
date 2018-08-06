@@ -3,6 +3,7 @@ def display_board(board):
     tictacto = ['     |     |','  ' + board[1] + '  |  '+ board[2] + '  |  ' + board[3],'     |     |','-----------------','     |     |','  ' + board[4] + '  |  '+ board[5] + '  |  ' + board[6], '     |     |', '-----------------', '     |     |','  ' + board[7] + '  |  '+ board[8] + '  |  ' + board[9], '     |     |']
     for i in tictacto:
         print (i)
+    print('\n\n')
 
 def player_input():
     player1input = ''
@@ -11,14 +12,18 @@ def player_input():
         player1input = input('Player 1, would you like to be X or O?  ')
         if player1input.upper() == 'X':
             print('\n'*100)
-            print('\n \nPlayer 1 you are X \nPlayer 2 you are O\n\n\n\n\n\n\n')
+            input('\n \nPlayer 1 you are X \nPlayer 2 you are O\n\npress Enter to conintue....')
+            print('\n'*100)
             break
         elif player1input.upper() == 'O':
             print('\n'*100)
-            print('\n \nPlayer 1 you are O \nPlayer 2 you are X\n\n\n\n\n\n\n')
+            input('\n \nPlayer 1 you are O \nPlayer 2 you are X\n\npress Enter to conintue....')
+            print('\n'*100)
             break
         else:
-            print('\n \nplease enter valid input\n \n')
+            print('\n'*100)
+            input('\n \nplease enter valid input\n\npress Enter to conintue....  ')
+            print('\n'*100)
             continue
 
 def place_marker(board, marker, position):
@@ -105,7 +110,7 @@ while True:
     exampleboard = ["#","1","2","3","4","5","6","7","8","9"]
     print('\n'*100)
     display_board(exampleboard)
-    input('\n\n\nThis is the example board. To enter an X or O on a \nlook at this board to see what number to press.\n\n\n\n\npress Enter to conintue....')
+    input('\n\n\nThis is the example board. To enter an X or O on a \nlook at this board to see what number to press.\n\npress Enter to conintue....')
     player_input()
     choose_first()
 
