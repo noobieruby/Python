@@ -1,3 +1,4 @@
 # Python
 
-Welcome to my awesome python folder. check out my cool programs. especually tic tac toe!
+### Welcome 
+Welcome to my awesome python folder. check out my cool programs. especially tic tac toe!
