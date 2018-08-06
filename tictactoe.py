@@ -91,7 +91,9 @@ def replay():
             return True
             break
         elif playagain == 'no':
-            print('Thanks for playing 🤪')
+            print('\n'*100)
+            input('                     ********************************* \n                     *                               *\n                     *                               *\n                     *      Thanks for playing!!!    *\n                     *                               *\n                     *                               *\n                     *********************************\n\n\n\n\n\n\n\n\npress Enter to exit....')
+            print('\n'*100)
             break
         else:
             print('Please say yes or no')
