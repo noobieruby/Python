@@ -1,5 +1,3 @@
-from IPython.display import clear_output
-
 def display_board(board):
     print('\n'*100)
     tictacto = ['     |     |','  ' + board[1] + '  |  '+ board[2] + '  |  ' + board[3],'     |     |','-----------------','     |     |','  ' + board[4] + '  |  '+ board[5] + '  |  ' + board[6], '     |     |', '-----------------', '     |     |','  ' + board[7] + '  |  '+ board[8] + '  |  ' + board[9], '     |     |']
@@ -8,13 +6,16 @@ def display_board(board):
 
 def player_input():
     player1input = ''
+    print('\n'*100)
     while player1input != 'X' or 'O':
         player1input = input('Player 1, would you like to be X or O?  ')
         if player1input.upper() == 'X':
-            print('\n \nPlayer 1 you are X \nPlayer 2 you are O')
+            print('\n'*100)
+            print('\n \nPlayer 1 you are X \nPlayer 2 you are O\n\n\n\n\n\n\n')
             break
         elif player1input.upper() == 'O':
-            print('\n \nPlayer 1 you are O \nPlayer 2 you are X')
+            print('\n'*100)
+            print('\n \nPlayer 1 you are O \nPlayer 2 you are X\n\n\n\n\n\n\n')
             break
         else:
             print('\n \nplease enter valid input\n \n')
@@ -56,7 +57,7 @@ def space_check(board, position):
 
 def full_board_check(board):
     if " " in board:
-        return False
+        return True
 
 
 def player_choice(board, player):
@@ -96,16 +97,15 @@ def replay():
 
 
 
-
-
-
-print('Welcome to Tic Tac Toe!')
-
+#program start:
+print('\n'*100)
+input('                     ********************************* \n                     *                               *\n                     *                               *\n                     *    Welcome to Tic Tac Toe!    *\n                     *                               *\n                     *                               *\n                     *********************************\n\n\n\n\n\n\n\n\npress Enter to conintue....')
 while True:
     playboard = ["#"," "," "," "," "," "," "," "," "," "]
     exampleboard = ["#","1","2","3","4","5","6","7","8","9"]
+    print('\n'*100)
     display_board(exampleboard)
-    print('This is the example board. To enter an X or O on a \nlook at this board to see what number to press.')
+    input('\n\n\nThis is the example board. To enter an X or O on a \nlook at this board to see what number to press.\n\n\n\n\npress Enter to conintue....')
     player_input()
     choose_first()
 
@@ -122,34 +122,26 @@ while True:
             print ('You won! Congrats')
             break
 
-
-
         if full_board_check(playboard):
-            continue
+            pass
         else:
             print ('This game was a tie! Good Job!')
             break
-
-
 
         # Player2's turn.
         secondmove = player_choice(playboard, player2)
         place_marker(playboard, player2, secondmove)
         display_board(playboard)
 
+        if win_check(playboard, player1):
+            print ('You won! Congrats')
+            break
 
-
-            if win_check(playboard, player1):
-                print ('You won! Congrats')
-                break
-
-
-
-            if full_board_check(playboard):
-                continue
-            else:
-                print ('This game was a tie! Good Job!')
-                break
+        if full_board_check(playboard):
+            pass
+        else:
+            print ('This game was a tie! Good Job!')
+            break
 
 
     if replay() != True:
